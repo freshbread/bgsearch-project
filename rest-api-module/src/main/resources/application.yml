@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: rest-api
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://49.247.146.195:3306/dnd?autoReconnect=true
+    username: dnd
+    password: jjh2080
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  devtools:
+    livereload:
+      enabled: true
+---
+mybatis:
+  type-aliases-package: co.boardgame.dnd.mapper
+  mapper-locations: mapper/*.xml
+
+---
+logging:
+  config: classpath:logback.xml
+  level:
+    net:
+      chndol:
+        study:
+          mybatissample:
+            mapper: DEBUG
+
+---
+search:
+  server:
+    ip: 127.0.0.1
