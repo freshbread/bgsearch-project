@@ -11,8 +11,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>co.boardgame.dnd</groupId>
-    <artifactId>rest-api</artifactId>
+    <groupId>com.github.freshbread</groupId>
+    <artifactId>bgsearc-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

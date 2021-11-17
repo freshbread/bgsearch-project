@@ -6,7 +6,6 @@ import java.util.Date;
 @Data
 public class BoardGame {
 
-    int id;
     String title;
     String title_eng;
     double weight;

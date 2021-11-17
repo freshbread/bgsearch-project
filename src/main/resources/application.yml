@@ -6,7 +6,7 @@ spring:
     name: rest-api
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://49.247.146.195:3306/dnd?autoReconnect=true
+    url: jdbc:mariadb://49.247.38.216:3306/dnd?autoReconnect=true
     username: dnd
     password: jjh2080
   mvc:

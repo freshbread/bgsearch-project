@@ -4,16 +4,15 @@
     <select id="selectBoardGameList" resultType="co.boardgame.dnd.data.BoardGame">
         <![CDATA[
         SELECT
-            id
-             , title
-             , title_eng
-             , weight
-             , playtime
-             , player
-             , recommend
-             , link
-             , regdate
-        FROM dnd_boardgame_list
+            title
+            , title_eng
+            , weight
+            , playtime
+            , player
+            , recommend
+            , link
+            , regdate
+        FROM boardgame
         WHERE 1=1
           AND isdelete = 'N'
         ORDER BY ID;
