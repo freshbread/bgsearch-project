@@ -1,4 +1,4 @@
-package co.boardgame.dnd;
+package com.github.freshbread;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "co.boardgame.dnd.mapper")
+@MapperScan(basePackages = "com.github.freshbread")
 public class Application {
 
     private static Logger logger = LoggerFactory.getLogger(Application.class);

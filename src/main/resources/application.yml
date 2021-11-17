@@ -18,7 +18,7 @@ spring:
       enabled: true
 ---
 mybatis:
-  type-aliases-package: co.boardgame.dnd.mapper
+  type-aliases-package: com.github.freshbread.mapper
   mapper-locations: mapper/*.xml
 
 ---

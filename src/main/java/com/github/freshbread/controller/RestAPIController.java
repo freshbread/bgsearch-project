@@ -1,6 +1,6 @@
-package co.boardgame.dnd.controller;
+package com.github.freshbread.controller;
 
-import co.boardgame.dnd.service.BoardGameService;
+import com.github.freshbread.service.BoardGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

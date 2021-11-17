@@ -1,4 +1,4 @@
-package co.boardgame.dnd.data;
+package com.github.freshbread.data;
 
 import lombok.Data;
 import java.util.Date;

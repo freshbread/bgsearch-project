@@ -1,7 +1,7 @@
-package co.boardgame.dnd.service;
+package com.github.freshbread.service;
 
-import co.boardgame.dnd.data.BoardGame;
-import co.boardgame.dnd.mapper.BoardGameMapper;
+import com.github.freshbread.data.BoardGame;
+import com.github.freshbread.mapper.BoardGameMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
