@@ -4,9 +4,10 @@
     <select id="selectBoardGameList" resultType="com.github.freshbread.data.BoardGame">
         <![CDATA[
         SELECT
-            title
+            id
+            , title
             , title_eng
-            , weight
+            , pweight
             , playtime
             , player
             , recommend
@@ -15,7 +16,51 @@
         FROM boardgame
         WHERE 1=1
           AND isdelete = 'N'
-        ORDER BY ID;
+        ORDER BY id;
         ]]>
     </select>
+
+    <select id="selectBoardGame" parameterType="int" resultType="com.github.freshbread.data.BoardGame">
+        <![CDATA[
+        SELECT
+            id
+             , title
+             , title_eng
+             , pweight
+             , playtime
+             , player
+             , recommend
+             , link
+             , regdate
+        FROM boardgame
+        WHERE 1=1
+          AND id = #{id}
+          AND isdelete = 'N';
+        ]]>
+    </select>
+
+    <insert id="insertBoardGame" parameterType="com.github.freshbread.data.BoardGame">
+        INSERT INTO boardgame (title, title_eng, pweight, playtime, player, recommend, link, regdate)
+             VALUES (#{title}, #{title_eng}, #{pweight}, #{playtime}, #{player}, #{recommend}, #{link}, now())
+    </insert>
+
+    <update id="updateBoardGame" parameterType="com.github.freshbread.data.BoardGame">
+        UPDATE boardgame
+           SET title = #{title}
+             , title_eng = #{title_eng}
+             , pweight = #{pweight}
+             , playtime = #{playtime}
+             , player = #{player}
+             , recommend = #{recommend}
+             , link = #{link}
+             , uptdate = now()
+         WHERE id = #{id}
+    </update>
+
+    <update id="deleteBoardGame" parameterType="int">
+        UPDATE boardgame
+        SET isdelete = 'Y'
+          , uptdate = now()
+        WHERE id = #{id}
+    </update>
 </mapper>

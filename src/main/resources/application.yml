@@ -1,14 +1,14 @@
 server:
-  port: 8081
+  port: ${SERVICE_PORT}
 
 spring:
   application:
     name: rest-api
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://49.247.38.216:3306/dnd?autoReconnect=true
-    username: dnd
-    password: jjh2080
+    url: jdbc:mariadb://127.0.0.1:3306/dnd_dev?autoReconnect=true
+    username: ${DB_USER}
+    password: ${DB_PASSWD}
   mvc:
     view:
       prefix: /WEB-INF/jsp/

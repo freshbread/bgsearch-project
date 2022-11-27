@@ -15,26 +15,56 @@ public class BoardGameService {
     BoardGameMapper bgMapper;
 
     /**
-     * 보드게임 리스트 가져오기 (DB select)
-     * @param page
-     * @param len
+     * 보드게임 목록 호출
      * @return returnList
      * */
-    public List<BoardGame> selectBoardGameListToDB(int page, int len) {
-
-        List<BoardGame> returnList = new ArrayList<>();
+    public List<BoardGame> selectBoardGameList() {
         List<BoardGame> list = bgMapper.selectBoardGameList();
 
-        int start = 1 + ((page - 1) * len);
-        int end = page * len;
+        return list;
+    }
 
-        for (int cnt = (start - 1); cnt < end; cnt++) {
-            if (cnt < list.size()) {
-                BoardGame bg = list.get(cnt);
-                returnList.add(bg);
-            }
-        }
+    /**
+     * 보드게임 내용 호출
+     * @Param id 보드게임 pk id
+     * @return returnList
+     * */
+    public BoardGame selectBoardGame(int id) {
+        BoardGame boardGame = bgMapper.selectBoardGame(id);
 
-        return returnList;
+        return boardGame;
+    }
+
+    /**
+     * 보드게임 등록
+     * @Param boardGame 보드게임 등록 내용
+     * @return status
+     * */
+    public int insertBoardGame(BoardGame boardGame) {
+        int status = bgMapper.insertBoardGame(boardGame);
+
+        return status;
+    }
+
+    /**
+     * 보드게임 수정
+     * @Param boardGame 보드게임 등록 내용
+     * @return status
+     * */
+    public int updateBoardGame(BoardGame boardGame) {
+        int status = bgMapper.updateBoardGame(boardGame);
+
+        return status;
+    }
+
+    /**
+     * 보드게임 삭제
+     * @Param id 보드게임 pk id
+     * @return status
+     * */
+    public int deleteBoardGame(int id) {
+        int status = bgMapper.deleteBoardGame(id);
+
+        return status;
     }
 }

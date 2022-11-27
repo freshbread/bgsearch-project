@@ -10,4 +10,12 @@ import com.github.freshbread.data.BoardGame;
 public interface BoardGameMapper {
 
     List<BoardGame> selectBoardGameList();
+
+    BoardGame selectBoardGame(int id);
+
+    int insertBoardGame(BoardGame boardGame);
+
+    int updateBoardGame(BoardGame boardGame);
+
+    int deleteBoardGame(int id);
 }

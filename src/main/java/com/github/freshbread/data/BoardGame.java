@@ -6,13 +6,15 @@ import java.util.Date;
 @Data
 public class BoardGame {
 
+    int id;
     String title;
     String title_eng;
-    double weight;
+    String pweight;
     String playtime;
     String player;
     String recommend;
     String link;
     Date regdate;
+    Date uptdate;
     String isdelete;
 }

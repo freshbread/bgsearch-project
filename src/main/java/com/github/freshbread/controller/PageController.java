@@ -16,19 +16,31 @@ public class PageController {
 
     @RequestMapping("/")
     public String index(HttpServletRequest httpServletRequest, Model model) {
+        return "redirect:list";
+    }
 
-        int page = 1;
-        int len = 10;
+    @RequestMapping("/list")
+    public String list(HttpServletRequest httpServletRequest, Model model) {
+        String keyword = httpServletRequest.getParameter("id");
+        model.addAttribute("list", bgService.selectBoardGameList());
 
-        String pageStr = httpServletRequest.getParameter("page");
-        try {
-            page = Integer.parseInt(pageStr);
-        } catch (NumberFormatException e) {
-            page = 1;
+        return "list";
+    }
+
+    @RequestMapping("/write")
+    public String write(HttpServletRequest httpServletRequest, Model model) {
+        String idStr = httpServletRequest.getParameter("id");
+        if (idStr != null && !"".equals(idStr)) {
+            int id = Integer.parseInt(idStr);
+            model.addAttribute("boardGame", bgService.selectBoardGame(id));
         }
 
-        model.addAttribute("list", bgService.selectBoardGameListToDB(page, len));
+        return "write";
+    }
 
-        return "index";
+    @RequestMapping("/useradd")
+    public String useradd(HttpServletRequest httpServletRequest, Model model) {
+
+        return "user/add";
     }
 }
