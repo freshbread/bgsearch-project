@@ -31,3 +31,31 @@
 
  - (TODO, 작업중) 보드게임 모임원 등록/수정/삭제
  - (TODO) 보드게임 모임원 목록 보기
+
+#### 5. 배포방법
+
+ - 시작
+
+ Docker 및 Docker compose가 설치된 환경에서 아래 커맨드 실행
+
+ ```
+ $ docker-compose up -d
+ ```
+
+ - 정지
+ 
+ ```
+ $ docker-compose down
+ ```
+
+ - 재배포
+ 
+ 정지 후 기존에 생성된 docker image 삭제
+ ```
+ $ docker rmi bgsearch-project-bgsearch
+ ```
+ 그리고 다시 시작
+ ```
+ $ docker-compose up -d
+ ```
+ 
