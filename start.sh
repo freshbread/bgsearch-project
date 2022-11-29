@@ -1,2 +1,2 @@
 #!/bin/bash
-nohup java -jar bgsearc-project.jar &
+nohup java -jar bgsearch-project.jar &
