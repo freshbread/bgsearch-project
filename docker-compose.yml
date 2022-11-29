@@ -1,0 +1,7 @@
+version: '3.1'
+services:
+  bgsearch:
+    image: .
+    restart: always
+    ports:
+      - '8080:8080'
