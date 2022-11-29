@@ -1,14 +1,14 @@
 server:
-  port: ${SERVICE_PORT}
+  port: 800
 
 spring:
   application:
-    name: rest-api
+    name: bgsearch-project
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/dnd_dev?autoReconnect=true
-    username: ${DB_USER}
-    password: ${DB_PASSWD}
+    url: jdbc:mariadb://49.247.43.17:3306/dnd_dev?autoReconnect=true
+    username: jhjeon
+    password: jun13576
   mvc:
     view:
       prefix: /WEB-INF/jsp/
@@ -30,8 +30,3 @@ logging:
         study:
           mybatissample:
             mapper: DEBUG
-
----
-search:
-  server:
-    ip: 127.0.0.1
